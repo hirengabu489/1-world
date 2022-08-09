@@ -1,0 +1,18 @@
+@import '../../layout/variables.scss';
+
+.LocationimgBoxcompStyle {
+  margin-bottom: 80px;
+  .LocationimgBox {
+    @include position(relative);
+    .LocationBoxBanner {
+      @include fullsize($max-height:670px);
+      @include size(670px, 100%);
+      img {
+        @include img(cover);
+      }
+      @media #{$IpadP} {
+        
+      }
+    }
+  }
+}

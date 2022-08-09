@@ -1,0 +1,109 @@
+@import '../../layout/variables.scss';
+
+.FootercompStyle {
+  background-color: #000;
+  .Footercompelement {
+    padding: 40px 0;
+    .FootercompLeft {
+      @media #{$PhoneL} {
+        margin-bottom: 30px;
+      }
+      .Footerlogo {
+        margin-bottom: 33px;
+        img {
+          @include size($width:100px);
+
+        }
+      }
+      .Footerdes {
+        @include text($white-color, 16px, 400);
+        line-height: 24px;
+        margin-bottom: 26px;
+        @include fullsize($max-width:340px);
+        @media #{$PhoneL} {
+          font-size: 14px;
+        }
+      }
+      .Footericoncontent {
+        @include d-flex;
+        .Footericon {
+          margin-right: 28px;
+          cursor: pointer;
+        }
+      }
+    }
+    .Footercompright {
+      @include d-flex;
+      .Footernavleft {
+        @include position(relative);
+        padding-right: 75px;
+        padding-left: 0;
+        margin: 0;
+        @media #{$PhoneL} {
+          padding-right: 35px;
+        }
+        &::after {
+          @include position(absolute, 50%, auto, auto, 100%, 1);
+          transform: translateY(-50%);
+          content: '';
+          @include size(40px, 1px);
+          background-color: #bababa;
+          @include d-block;
+        }
+        li {
+          padding: 10px 0;
+          list-style: none;
+          a {
+            text-decoration: none;
+            @include text($white-color, 16px, 400);
+            line-height: 24px;
+            letter-spacing: 0.2px;
+            @include d-in-block;
+            transition: all 0.3s ease;
+            &:hover {
+              color: $primary-color;
+            }
+            @media #{$PhoneL} {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      .Footernavright {
+        padding-left: 75px;
+        margin: 0;
+        @media #{$PhoneL} {
+          padding-left: 35px;
+        }
+        li {
+          padding: 10px 0;
+          list-style: none;
+          a {
+            text-decoration: none;
+            @include text($white-color, 16px, 400);
+            line-height: 24px;
+            letter-spacing: 0.2px;
+            @include d-in-block;
+            transition: all 0.3s ease;
+            &:hover {
+              color: $primary-color;
+            }
+            @media #{$PhoneL} {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .Footercompdown {
+    @include text(#e8e8e8, 14px, 400);
+    line-height: 30px;
+    text-align: center;
+    opacity: 0.5;
+    padding-bottom: 12px;
+    @media #{$PhoneL} {
+      font-size: 12px;
+    }
+  }
+}

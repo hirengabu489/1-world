@@ -1,0 +1,80 @@
+@import '../../layout/variables.scss';
+
+.TeamcardListSlidercompStyle {
+  .Teamcard__Lists {
+    .slick-slider {
+      .slick-arrow {
+        background: transparent;
+        color: $white-color;
+        z-index: 1;
+        @include b-radius(4px);
+        @include size(32px, 32px);
+        &.slick-prev {
+          left: 1%;
+        }
+        &.slick-next {
+          right: 1%;
+        }
+        &::before {
+          line-height: 34px;
+          color: $black-23;
+          font-size: 32px;
+          opacity: 1;
+        }
+      }
+      .slick-slide {
+        &:nth-of-type(even) {
+          .TeamcardcompStyles {
+            .Teamcardbox {
+              background: #f9f7e1;
+              border: 1px solid rgba(232, 217, 37, 0.5);
+            }
+          }
+        }
+        .slideitem {
+          padding: 0 15px;
+        }
+      }
+    }
+  }
+  .Viewmore__Link {
+    padding: 30px 30px 0;
+    @include d-flex {
+      align-items: checkAlign(c);
+      justify-content: getJustify(fe);
+    }
+    @media #{$PhoneL} {
+      justify-content: getJustify(c);
+      padding: 20px 0 0;
+    }
+    a {
+      @include d-flex {
+        align-items: checkAlign(c);
+      }
+    }
+    span {
+      padding: 0 10px 0 20px;
+      @include text($black-23, 16px, 500);
+      line-height: 32px;
+      @include position(relative);
+      cursor: pointer;
+      @media #{$PhoneL} {
+        font-size: 14px;
+      }
+      &::before {
+        content: '';
+        background: $black-23;
+        @include size(1px, 100%);
+        @include fullsize($max-width: 150px);
+        @include d-in-block();
+        @include position(absolute, 16px, 100%, auto, auto, 1);
+        @media #{$Small-Laptop} {
+          @include fullsize($max-width:50PX);
+        }
+        @media #{$PhoneL} {
+          display: none;
+        }
+      }
+    }
+  }
+}

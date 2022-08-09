@@ -1,0 +1,38 @@
+@import './mixin.scss';
+
+:root {
+  --primary-color: #e8d925;
+  --secondary-color: #1c560c;
+  --white-color: #ffffff;
+}
+
+html[data-theme='light'] {
+  --body-bg:#ffffff;
+  --black-23: #231f20;
+  --darkgray-75: #757679;
+  --lightgray-e0: #e0e0e0;
+}
+
+html[data-theme='dark'] {
+  --body-bg:#000000;
+  --black-23: #332f30;
+  --darkgray-75: #858689;
+  --lightgray-e0: #e9e9e9;
+}
+
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$white-color: var(--white-color);
+$black-23: var(--black-23);
+$darkgray-75: var(--darkgray-75);
+$lightgray-e0: var(--lightgray-e0);
+$body-bg: var(--body-bg);
+
+
+$Small-Desktop: 'only screen and (max-width : 1439px)';
+$Small-Laptop: 'only screen and (max-width: 1199px)';
+$IpadP: 'only screen and (max-width : 1023px)';
+$PhoneL: 'only screen and (max-width: 767px)';
+$PhoneS: 'only screen and (max-width: 540px)';
+$PhoneXS: 'only screen and (max-width: 359px)';
+$mobile-landscape-414: 'only screen and (min-device-width: 414px) and (max-device-width: 896px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)';

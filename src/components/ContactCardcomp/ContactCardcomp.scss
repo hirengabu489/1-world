@@ -1,0 +1,55 @@
+@import '../../layout/variables.scss';
+
+.ContactCardcompStyles {
+  .ContactCardbox {
+    background: rgba($color: #e8d925, $alpha: 0.15);
+    @include size($width:100%);
+    padding: 48px 70px;
+    @include b-radius(6px);
+    @media #{$Small-Laptop} {
+      padding: 36px 50px;
+    }
+    @media #{$PhoneL} {
+      padding: 24px 30px;
+    }
+    .ContactCardelement {
+      @include d-flex {
+        align-items: checkAlign(c);
+        justify-content: getJustify(sb);
+      }
+      @media #{$PhoneL} {
+        flex-direction: getDirection(c);
+      }
+      .ContactCardwrap {
+        margin-right: 40px;
+        @media #{$PhoneL} {
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        h4 {
+          @include headline($black-23, 30px, 45px, 12px, 600);
+          letter-spacing: 1px;
+          @media #{$PhoneL} {
+            font-size: 18px;
+            line-height: 24px;
+          }
+        }
+        p {
+          @include text ($darkgray-75, 16px, 400);
+          line-height: 27px;
+          letter-spacing: 0.2px;
+          margin: 0;
+          @media #{$PhoneL} {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+      .ContactCardbtn {
+        .ant-btn {
+          @include size($width:150px);
+        }
+      }
+    }
+  }
+}

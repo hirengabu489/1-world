@@ -1,0 +1,125 @@
+@import "../../layout/variables.scss";
+
+.MainBannercompStyle {
+  @include position(relative);
+  .MainBanner_VideoBlock {
+    @include size(1270px, 100%);
+    @media #{$Small-Laptop} {
+      @include size ($height: 1140px);
+    }
+    @media #{$PhoneL} {
+      @include size ($height: 920px);
+    }
+    video {
+      @include img(cover);
+      @include position(relative);
+    }
+  }
+  .MainBannerContant {
+    @include position(absolute, 0, 0, 0, 0, 9);
+    @include size(100%, 100%);
+    @include d-flex {
+      flex-direction: getDirection(c);
+      justify-content: getJustify(sb);
+    }
+    background: rgba($color: $black-23, $alpha: 0.2);
+    .MainBannerDetails {
+      margin-top: auto;
+      .MainBanner_Heading {
+        @include headline($white-color, 36px, 54px, 0, 600);
+        text-transform: uppercase;
+        letter-spacing: 9px;
+        padding: 65px 65px 65px 0;
+        span {
+          @include d-block();
+          padding-bottom: 10px;
+          @media #{$PhoneL} {
+            padding-bottom: 4px;
+          }
+        }
+        @media #{$Small-Laptop} {
+          padding: 40px 5px;
+          font-size: 30px;
+          line-height: 42px;
+          letter-spacing: 5px;
+        }
+        @media #{$PhoneL} {
+          padding: 30px 5px;
+          font-size: 24px;
+          line-height: 36px;
+          letter-spacing: 3px;
+        }
+      }
+      .MainBanner_availability_Box {
+        background: rgba($color: #1c560c, $alpha: 0.7);
+        padding: 20px;
+        @include size(415px, 100%);
+        @include fullsize(415px, 720px);
+        @include d-flex{
+          align-items: checkAlign(c);
+          justify-content: getJustify(c);
+          flex-direction: getDirection(c);
+        }
+        @media #{$Small-Laptop} {
+          @include size(360px, 600px);
+          @include fullsize(360px, 600px);
+          padding: 15px;
+        }
+        @media #{$PhoneL} {
+          @include size(272px, 100%);
+          @include fullsize(272px, 100%);
+          padding: 10px;
+        }
+        .pretext {
+          letter-spacing: 9px;
+          @include text($white-color, 20px, 500);
+          text-transform: uppercase;
+          line-height: 30px;
+          padding-bottom: 30px;
+          @media #{$Small-Laptop} {
+            padding-bottom: 20px;
+            font-size: 18px;
+            letter-spacing: 5px;
+          }
+          @media #{$PhoneL} {
+            padding-bottom: 10px;
+            font-size: 16px;
+            letter-spacing: 3px;
+          }
+        }
+        .Title {
+          letter-spacing: 9px;
+          @include headline($white-color, 36px, 54px, 50px, 600);
+          text-transform: uppercase;
+          @media #{$Small-Laptop} {
+            margin-bottom: 30px;
+            font-size: 26px;
+            line-height: 38px;
+            letter-spacing: 5px;
+          }
+          @media #{$PhoneL} {
+            margin-bottom: 20px;
+            font-size: 20px;
+            line-height: 32px;
+            letter-spacing: 3px;
+          }
+        }
+        .ant-btn {
+          text-transform: uppercase;
+          background: none;
+          border: 1px solid $white-color;
+          color: $white-color;
+          font-weight: 600;
+          height: 50px;
+          border-radius: 4px;
+          @include size ($width: 150px);
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            color: $primary-color;
+            border-color: $primary-color;
+          }
+        }
+      }
+    }
+  }  
+}

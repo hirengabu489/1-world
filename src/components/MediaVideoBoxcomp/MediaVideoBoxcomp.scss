@@ -1,0 +1,38 @@
+@import '../../layout/variables.scss';
+
+
+.MediaVideoBoxcompStyle {
+  .MediaVideoBox__Block {
+    @include position(relative);
+    @include b-radius(6px);
+    .VideoBlock {
+      @include size(500px, 100%);
+      @media #{$PhoneL} {
+        @include size($height:250px);
+      }
+      video {
+        @include img(cover);
+      }
+    }
+    .MediaVideoBox__Contant {
+      @include position(absolute, 0, 0, 0, 0, 3);
+      @include size(100%, 100%);
+      @include d-flex{
+        flex-direction: getDirection(c);
+        justify-content: getJustify(fe);
+      }
+      background: rgba($color: $black-23, $alpha: 0.3);
+      padding: 24px;
+      @media #{$PhoneL} {
+        padding: 12px 15px;
+      }
+      .MediaVideoBox__Title {
+        @include text($white-color, 20px, 600);
+        line-height: 24px;
+        @media #{$PhoneL} {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

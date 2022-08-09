@@ -1,0 +1,107 @@
+@import '../../layout/variables.scss';
+
+.BuildingimgCardcompStyle {
+  .BuildingimgCard_Block {
+    @include position(relative);
+    cursor: default;
+    @media #{$PhoneL} {
+      margin: 16px;
+      overflow: hidden;
+      @include b-radius(6px);
+    }
+    .BuildingimgCard__Img {
+      @include size(600px, 100%);
+      @include fullsize($max-height:600px);
+      @media #{$IpadP} {
+        @include size($height:300px);
+      }
+      @media #{$PhoneS} {
+        @include size($height:16px);
+      }
+      img {
+        @include img(cover);
+
+      }
+    }
+    .BuildingImgCard__contant {
+      @include position(absolute, 0, 0, 0, 0, 1);
+      @include size(100%, 100%);
+      @include d-flex {
+        align-items: getDirection(c);
+        justify-content: getJustify(fe);
+      }
+      background: rgba($color: $black-23, $alpha: 0.4);
+      padding: 0 20px 40px 24px;
+      transition: all 0.3s ease-in-out;
+      @media #{$IpadP} {
+        padding: 20px;
+      }
+      .Building__Name {
+        letter-spacing: 1px;
+        @include text($white-color, 20px, 600);
+        text-transform: uppercase;
+        line-height: 30px;
+        @media #{$PhoneL} {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+      .Building__Details {
+        @include d-none();
+        .des-text {
+          letter-spacing: 1px;
+          @include text ($white-color, 16px, 400);
+          line-height: 24px;
+          margin: 10px 0 16px;
+          @include d-block ();
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient:vertical;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          @media #{$PhoneL} {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+        .viewmore__link {
+          @include d-flex {
+            align-items: checkAlign(c);
+            justify-content: getJustify(fe);
+          }
+          span {
+            padding: 0 10px;
+            @include text($white-color, 14px, 400);
+            line-height: 21px;
+            @include position(relative);
+            cursor: pointer;
+            &::before{
+              content: '';
+              background: $white-color;
+              @include size (1px, 100%);
+              @include fullsize($max-width:100px);
+              @include d-in-block();
+              @include position(absolute, 10px, 100%, auto, auto, 1);
+              @media #{$Small-Laptop} {
+                @include fullsize ($max-width:50px);
+              }
+            }
+            svg {
+              cursor: pointer;
+              path {
+                fill: $white-color;
+              }
+            }
+          }
+        }
+      }
+    }
+    &:hover {
+      .BuildingImgCard__contant{
+        .Building__Details{
+          @include d-block();
+        }
+      }
+    }
+  }
+}

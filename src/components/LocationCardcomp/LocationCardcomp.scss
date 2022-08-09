@@ -1,0 +1,37 @@
+@import '../../layout/variables.scss';
+
+.LocationCardcompStyle {
+  .LocationCardBox {
+    background-color: #fefbe8;
+    border: 1px solid rgba(232, 217, 37, 0.5);
+    padding: 30px 28px 30px 40px;
+    @include b-radius(6px);
+    @include size($width:100%);
+    @media #{$PhoneL} {
+      padding: 20px;
+    }
+    .LocationCardElement {
+      h3 {
+        @include headline($black-23, 30px, 45px, 20px, 600);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        @media #{$PhoneL} {
+          font-size: 20px;
+          line-height: 30px;
+          margin-bottom: 14px;
+        }
+      }
+      p {
+        @include text($darkgray-75, 18px, 400);
+        line-height: 32px;
+        @include d-flex{
+          align-items: checkAlign(c);
+        }
+        letter-spacing: 0.2px;
+        span {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

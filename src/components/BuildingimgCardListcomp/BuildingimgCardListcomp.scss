@@ -1,0 +1,39 @@
+@import '../../layout/variables.scss';
+
+.BuildingimgCardListcompStyle {
+  .BuildingimgCard__List {
+    @include d-flex {
+      align-items: checkAlign(c);
+      justify-content: getJustify(c);
+    }
+    flex-flow: row nowrap;
+    @media #{$IpadP} {
+      @include d-grid ();
+      grid-template-columns: 1fr 1fr 1fr; 
+    }
+    @media #{$PhoneL} {
+      grid-template-columns: 1fr 1fr;
+    }
+    .Building__Itemcol {
+      @include d-grid();
+      flex: 1;
+      transition: all 0.3s ease-in-out;
+      @include fullsize($max-width: 16.66%);
+      @include size($height:100%);
+      min-width: 10%;
+      @media #{$IpadP} {
+        @include fullsize($max-width:100%);
+        min-width: 100%;
+      }
+      &:hover {
+        transition: all 0.5s ease-in-out;
+        @include fullsize($max-width:20% !important);
+        flex-grow: 2;
+        cursor: pointer;
+        @media #{$IpadP} {
+          @include fullsize($max-width:100%);
+        }
+      }
+    }
+  }
+}

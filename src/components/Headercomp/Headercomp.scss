@@ -1,0 +1,136 @@
+@import "../../layout/variables.scss";
+.HeadercompStyle {
+  @include position(fixed, 0, 0, auto, 0);
+  z-index: 99;
+  padding: 30px 0;
+  @include size($width:100%);
+  transition: all 0.3s ease-in-out;
+  @media #{$PhoneL} {
+    padding: 15px 0;
+  }
+  &.HeaderSticky {
+    background: rgba($color: #231f20, $alpha: 0.8);
+    padding: 15px 0;
+  }
+  &.HeaderSticky + .HeadercompStyle {
+    top: 72px;
+  }
+  .Header_Rightmenu_Bar {
+    @include d-flex {
+      align-items: checkAlign(c);
+      justify-content: getJustify(fe);
+    }
+  }
+  .Mobilemenu_icon {
+    @include d-none() {
+      .ant-btn {
+        border: none;
+        outline: none;
+      }
+    }
+    @media #{$PhoneL} {
+      @include d-flex {
+        align-items: checkAlign(c);
+        justify-content: getJustify(fe);
+      }
+    }
+  }
+  .menu_block {
+    @include d-flex {
+      align-items: checkAlign(c);
+      justify-content: getJustify(fe);
+    }
+    @media #{$PhoneL} {
+      background: $black-23;
+      @include position(fixed, 0, 0, 0, 0, 10);
+      transition: all 0.3s ease-in-out;
+      transform-origin: top right;
+      transform: scaleY(0);
+      padding: 80px 20px 20px;
+      @include size(100%, 100%);
+      overflow: hidden;
+      @include d-flex {
+        align-items: checkAlign(c);
+        justify-content: getJustify(fs);
+      }
+    }
+    &.open {
+      transform: scaleY(1);
+      overflow-y: auto;
+    }
+    .menuclose_icon {
+      @include d-none();
+      .ant-btn {
+        border: none;
+        outline: none;
+        @include size(42px, 42px);
+      }
+      @media #{$PhoneL} {
+        @include d-flex ();
+        @include position(absolute, 20px, 20px, auto, auto, 10);
+      }
+    }
+    .ant-menu {
+      border: none;
+      @include d-flex {
+        align-items: checkAlign(c);
+      }
+      @media #{$PhoneL} {
+        flex-direction: getDirection(c);
+      }
+      li {
+        letter-spacing: 0.2px;
+        margin: 0 7px;
+        font-size: 16px;
+        border: none;
+        background: transparent;
+        &::before {
+          content: '';
+          background: transparent;
+          @include size(2px, 20px);
+          @include d-in-block();
+          @include position (absolute, auto, 0, 0, 0, 1);
+          margin: 0 auto;
+        }
+        &:hover {
+          border: none;
+          color: $primary-color;
+          &::before{
+            background: $primary-color;
+          }
+        }
+        @media #{IpadP} {
+          margin: 0;
+          padding: 0 12px;
+        }
+        @media #{$PhoneL} {
+          margin: 0 0 24px;
+          font-size: 20px;
+          opacity: 0.5;
+          font-weight: 600;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .ant-btn {
+      @include size ($width: 182px);
+      margin-left: 23px;
+      color: $black-23;
+      @media #{IpadP} {
+        margin-left: 15px;
+      }
+      @media #{$PhoneL} {
+        margin: 0;
+      }
+    }
+  }
+  .theme_btns {
+    .ant-btn {
+      @include size($width: auto);
+      border: none;
+      margin-left: 10px;
+    }
+  }
+}

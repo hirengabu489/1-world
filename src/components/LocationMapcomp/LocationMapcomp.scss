@@ -1,0 +1,23 @@
+@import '../../layout/variables.scss';
+
+.LocationMapcompStyle {
+  .LocationMapBox {
+    @include size(100%, 100%);
+    @include fullsize($max-height: 580px);
+    background: $lightgray-e0;
+    overflow: hidden;
+    @media #{$PhoneL} {
+      @include size($height:340px);
+    }
+    .map__img{
+      margin: 0;
+      @include size(580px, 100%);
+      @media #{$PhoneL} {
+        @include size($height:340px);
+      }
+      img {
+        @include img(cover);
+      }
+    }
+  }
+}

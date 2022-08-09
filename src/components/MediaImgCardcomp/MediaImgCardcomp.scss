@@ -1,0 +1,33 @@
+@import '../../layout/variables.scss';
+
+
+.MediaImgCardcompStyle {
+  .MediaImgCard__Block {
+    .MediaImgCard__Img {
+      @include size(200px, 100%);
+      @include fullsize($max-height:200px);
+      margin-bottom: 16px;
+      @include b-radius(6px);
+      overflow: hidden;
+      img {
+        @include img(cover);
+      }
+      @media #{$PhoneL} {
+        @include size($height: 150px);
+      }
+    }
+    .MediaImgCard__Title {
+      @include text($black-23, 16px, 600);
+      line-height: 24px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      @media #{$IpadP} {
+        white-space: normal;
+      }
+      @media #{$PhoneL} {
+        font-size: 14px;
+      }
+    }
+  }
+}
